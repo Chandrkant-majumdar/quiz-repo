@@ -41,7 +41,7 @@ const StudentDashboard = () => {
 
   return (
     <>
-      <div className="bg-blue-500 py-4">
+      <div className="bg-blue-500 py-4 font-bold">
         <Nav
           brandText="Quiz Management System"
           menuItems={[

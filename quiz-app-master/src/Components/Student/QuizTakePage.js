@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Nav from "./Scatrch/Navbar";
 import QuestionCard from "./QuestionCard"; // Assuming you have a QuestionCard component
-import { useParams } from "react-router-dom";}
+import { useParams } from "react-router-dom";
 const QuizPage = () => {
   const [quiz, setQuiz] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);

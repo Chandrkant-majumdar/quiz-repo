@@ -1,7 +1,11 @@
 import React from "react";
 import { Button } from "@mui/material";
-
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function QuizList({ quizzes, onDeleteQuiz, onEditQuiz }) {
+  let { teacherId } = useParams();
+  console.log(teacherId);
+  const navigate = useNavigate();
   return (
     <div className="mb-8 bg-white rounded-lg shadow-md p-6">
       <h2 className="text-xl font-semibold mb-4">Quizzes</h2>
@@ -33,7 +37,9 @@ function QuizList({ quizzes, onDeleteQuiz, onEditQuiz }) {
       <Button
         variant="outlined"
         color="primary"
-        href="/create-quiz"
+        // onClick={}
+        onClick={() => navigate(`/create-quiz/${teacherId}`)}
+        //  href="/create-quiz/${teacherId}"
         className="block mt-4"
       >
         Create New Quiz

@@ -93,13 +93,14 @@ function QuizPage() {
           Id: quiz.Id,
           title: quiz.title,
         },
+        teacherId: quiz.teacherId,
         questionSubmissions: answers.map((answer, index) => ({
           question: quiz.questions[index],
           userAnswer: answer,
         })),
         score: score,
       };
-
+      console.log(data);
       const response = await axios.post("http://localhost:8080/submit", data);
       alert("Quiz submitted:");
       navigate(`/Student-Dash/${studentId}`);

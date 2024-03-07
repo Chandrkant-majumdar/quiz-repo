@@ -38,18 +38,18 @@ function LoginPage() {
       .post(`http://localhost:8080/login`, user)
       .then((res) => {
         const result = res.data;
-        console.log(result);
+        //console.log(result);
         if (result.role === "teacher") {
-          console.log(result);
+          // console.log(result);
           navigate(`/Teacher-Dash/${result.id}`);
         } else if (result.role === "student") {
           navigate(`/Student-Dash/${result.id}`, {
             state: { username: userName, data: result },
           });
         } else {
-          console.log(result.type);
+          //console.log(result.type);
           alert("Not Found");
-          console.log("error");
+          //console.log("error");
         }
       })
       .catch((err) => {

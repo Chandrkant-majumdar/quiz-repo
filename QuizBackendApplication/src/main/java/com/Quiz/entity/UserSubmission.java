@@ -10,6 +10,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class UserSubmission {
     @Id
     private String id;
+    
+    private String teacherId;
+
 
     private User user;
 
@@ -68,4 +71,12 @@ public class UserSubmission {
     public void setScore(int score) {
         this.score = score;
     }
+
+	public String getTeacherId() {
+		return teacherId;
+	}
+
+	public void setTeacherId(String teacherId) {
+		this.teacherId = teacherId;
+	}
 }

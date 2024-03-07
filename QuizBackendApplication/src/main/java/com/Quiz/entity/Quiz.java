@@ -12,6 +12,8 @@ public class Quiz {
     private String id;
 
     private String title;
+    
+    private String teacherId;
 
     private List<Question> questions;
 
@@ -57,6 +59,14 @@ public class Quiz {
 
 	public String getId() {
 		return id;
+	}
+
+	public String getTeacherId() {
+		return teacherId;
+	}
+
+	public void setTeacherId(String teacherId) {
+		this.teacherId = teacherId;
 	}
 
     // Getters and setters

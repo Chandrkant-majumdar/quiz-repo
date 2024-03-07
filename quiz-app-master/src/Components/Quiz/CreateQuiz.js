@@ -8,8 +8,10 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
-
+import { useParams } from "react-router-dom";
 function CreateQuiz() {
+  let { teacherId } = useParams();
+  console.log(teacherId);
   const [newQuiz, setNewQuiz] = useState({
     title: "",
     questions: [
@@ -19,7 +21,10 @@ function CreateQuiz() {
         options: [{ text: "" }, { text: "" }, { text: "" }, { text: "" }],
         correctAnswer: "",
         explanation: "",
+        teacherId: "",
       },
+
+      // teacherId:
     ],
     timeLimit: 0,
     scheduledDate: new Date(),
@@ -71,6 +76,7 @@ function CreateQuiz() {
         })),
         timeLimit: newQuiz.timeLimit,
         scheduledDate: newQuiz.scheduledDate.toISOString(),
+        teacherId: teacherId,
       };
 
       console.log(requestBody);

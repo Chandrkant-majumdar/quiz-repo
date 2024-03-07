@@ -42,18 +42,18 @@ function TeacherDashboard() {
       .catch((error) => console.error("Error fetching quizzes:", error));
 
     // Fetch quiz statistics
-    fetch("http://localhost:8080/api/quizStatistics")
-      .then((response) => response.json())
-      .then((data) => setQuizStatistics(data))
-      .catch((error) =>
-        console.error("Error fetching quiz statistics:", error)
-      );
+    // fetch("http://localhost:8080/api/quizStatistics")
+    //   .then((response) => response.json())
+    //   .then((data) => setQuizStatistics(data))
+    //   .catch((error) =>
+    //     console.error("Error fetching quiz statistics:", error)
+    //   );
   }, []);
 
   // Function to handle quiz deletion
   const handleDeleteQuiz = (quizId) => {
     // Make DELETE request to backend to delete quiz
-    console.log(quizId);
+    //  console.log(quizId);
     fetch(`http://localhost:8080/api/quizzes/${quizId}`, {
       method: "DELETE",
     })
@@ -79,7 +79,7 @@ function TeacherDashboard() {
 
   return (
     <>
-      <div className="bg-blue-500 py-4">
+      <div className="bg-blue-500 py-4 font-bold">
         <Nav
           brandText="Quiz Management System"
           menuItems={[
@@ -115,7 +115,7 @@ function TeacherDashboard() {
             onEditQuiz={handleEditQuiz}
           />
           {/* Test Statistics Section */}
-          <TestStatistics />
+          <TestStatistics teacherId={teacherId} />
         </Container>
       </div>
     </>
