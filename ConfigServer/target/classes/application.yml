@@ -1,0 +1,13 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: CONFIG-SERVER
+
+spring.cloud.config:
+  server:
+    bootstrap: true
+    composite:
+      - type: git
+        uri: https://github.com/Chandrkant-majumdar/QuizConfigServer
